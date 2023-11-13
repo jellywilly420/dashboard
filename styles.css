@@ -1,0 +1,169 @@
+:root {
+	--sidebar-width: clamp(150px, 20vw, 250px);
+}
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	display: grid;
+	grid-template-areas:"sidebar header"
+						"sidebar main"
+						"footer footer";
+	grid-template-columns: min(var(--sidebar-width), 35%) auto;
+}
+aside {
+	grid-area: sidebar;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	padding: 1rem 0 0 1rem;
+}
+aside .logo {
+	display: flex;
+	align-items: center;
+	gap: .5rem;
+}
+aside nav ul {
+	list-style: none;
+	display: flex;
+	flex-direction: column;
+	gap: .25rem;
+}
+aside nav ul li a {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+header {
+	padding-block: 1rem;
+	grid-area: header;
+	display: grid;
+	row-gap: 1rem;
+	grid-template-areas:"searchbar notifs-profile"
+						"greetings action-buttons";
+    grid-template-rows: 8fr 10fr;
+	grid-template-columns: 2fr 1fr;
+}
+header .profile-picture {
+	border-radius: 100%;
+}
+header .searchbar {
+	display: flex;
+	padding: 10px;
+}
+header .searchbar input {
+	flex: 1;
+	flex-shrink: 1;
+}
+header .searchbar button {
+	padding-inline: 1rem;
+}
+header .notifs-profile {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 2rem;
+	margin-right: 2rem;
+}
+header .profile {
+	display: flex;
+	align-items: center;
+	gap: .25rem;
+}
+header .greetings {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	margin-left: 10px;
+}
+header .greetings .username-handle {
+	font-size: 1.4em;
+	font-weight: 700;
+}
+header .action-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 1rem;
+	margin-right: 2rem;
+}
+header .action-buttons button {
+	padding: .5rem 1rem;
+}
+main {
+	padding: 2rem 2rem 0 0;
+	grid-area: main;
+	display: grid;
+	grid-template-areas:"projects-container anouncements-container"
+						"projects-container trending-container";
+    grid-template-columns: 3fr 1fr;
+    gap: 10px;
+}
+main .projects-container {
+	grid-area: projects-container;
+}
+main .projects {
+	gap: 1rem;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	grid-auto-rows: minmax(250px, 1fr);
+}
+main .projects h3 {
+	margin-block: 1rem;
+}
+main .projects h3, 
+main .projects p {
+	text-align: center;
+}
+main .projects .card .content {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding-inline: 5%;
+}
+main .projects .card .links {
+	padding-left: 5%;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+main .projects .card .links a {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+main .anouncements-container {
+	grid-area: anouncements-container;
+}
+main .trending-container {
+	grid-area: trending-container;
+}
+main .trending {
+	display: flex;
+	flex-direction: column;
+	gap: .75rem;
+}
+main .trending .card {
+	display: flex;
+	gap: .125rem;
+}
+main .trending .card .content {
+	display: flex;
+	flex-direction: column;
+	gap: .125rem;
+}
+main .trending .card .content p:first-child {
+	font-weight: 700;
+}
+footer {
+	padding-block: .5rem;
+	gap: .5rem;
+	grid-area: footer;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
