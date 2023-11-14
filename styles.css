@@ -1,5 +1,5 @@
 :root {
-	--sidebar-width: clamp(150px, 20vw, 250px);
+	--sidebar-width: clamp(150px, 20vw, 220px);
 }
 * {
 	box-sizing: border-box;
@@ -7,11 +7,15 @@
 	padding: 0;
 }
 body {
+	font-family: sans-serif;
 	display: grid;
 	grid-template-areas:"sidebar header"
 						"sidebar main"
 						"footer footer";
 	grid-template-columns: min(var(--sidebar-width), 35%) auto;
+}
+a {
+	text-decoration: none;
 }
 aside {
 	grid-area: sidebar;
@@ -128,6 +132,7 @@ main .projects .card .links {
 	padding-left: 5%;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	gap: 1rem;
 }
 main .projects .card .links a {
