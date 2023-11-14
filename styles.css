@@ -1,5 +1,19 @@
 :root {
-	--sidebar-width: clamp(150px, 20vw, 220px);
+	--sidebar-width: clamp(10vw, auto, 260px);
+
+	--light: #f8fafc;
+	--cyan-50: #ecfeff;
+	--cyan-100: #cffafe;
+	--cyan-200: #a5f3fc;
+	--cyan-300: #67e8f9;
+	--cyan-400: #22d3ee;
+	--cyan-500: #06b6d4;
+	--cyan-600: #0891b2;
+	--cyan-700: #0e7490;
+	--cyan-800: #155e75;
+	--cyan-900: #164e63;
+	--cyan-950: #083344;
+
 }
 * {
 	box-sizing: border-box;
@@ -7,41 +21,75 @@
 	padding: 0;
 }
 body {
-	font-family: sans-serif;
+	font-family: 'Ubuntu', sans-serif;
 	display: grid;
 	grid-template-areas:"sidebar header"
 						"sidebar main"
 						"footer footer";
-	grid-template-columns: min(var(--sidebar-width), 35%) auto;
+	/* grid-template-columns: auto auto; */
 }
 a {
 	text-decoration: none;
 }
+button:hover {
+	cursor: pointer;
+}
 aside {
+	max-width: 25vw;
 	grid-area: sidebar;
 	display: flex;
 	flex-direction: column;
-	gap: 2rem;
-	padding: 1rem 0 0 1rem;
+	gap: 2.75rem;
+	background-color: var(--cyan-600);
+}
+aside h1,
+aside a,
+aside a:visited {
+	color: var(--cyan-50);
+}
+aside svg {
+	fill: var(--cyan-50);
+	flex-shrink: 0;
 }
 aside .logo {
+	padding-top: 1rem;
+	padding-left: 1rem;
 	display: flex;
 	align-items: center;
 	gap: .5rem;
 }
+aside .logo h1 {
+	font-size: 1.5rem;
+}
 aside nav ul {
+	font-size: 1.1rem;
 	list-style: none;
 	display: flex;
 	flex-direction: column;
-	gap: .25rem;
+	gap: .5rem;
 }
 aside nav ul li a {
 	display: flex;
 	align-items: center;
-	gap: 5px;
+	gap: .5rem;
+	padding: .5rem 5rem .5rem 1rem;
+}
+aside nav ul li a:hover {
+	background-color: var(--cyan-50);
+}
+aside nav ul li a:hover {
+	color: var(--cyan-800);
+}
+aside nav ul li a:hover svg {
+	fill: var(--cyan-800);
+}
+aside nav ul li a, 
+aside nav ul li a svg {
+	transition: all 250ms cubic-bezier(.77,0,.18,1);
 }
 header {
-	padding-block: 1rem;
+	background-color: var(--cyan-50);
+	padding: 1.5rem;
 	grid-area: header;
 	display: grid;
 	row-gap: 1rem;
@@ -55,14 +103,43 @@ header .profile-picture {
 }
 header .searchbar {
 	display: flex;
-	padding: 10px;
+	margin: 5px;
+	border-radius: 20px;
+	overflow: hidden;
+}
+header .searchbar:focus,
+header .searchbar:focus-within {
+	outline: 1px solid var(--cyan-950);
+}
+header .searchbar > * {
+	background-color: var(--cyan-100);
+	border: none;
+	outline: none;
 }
 header .searchbar input {
 	flex: 1;
 	flex-shrink: 1;
+	padding: 5px 15px;
+	font-size: 16px;
+	font-weight: 600;
+	color: var(--cyan-950);
 }
 header .searchbar button {
-	padding-inline: 1rem;
+	padding: 5px 1rem;
+}
+header .searchbar button:hover,
+header .searchbar button:focus {
+	filter: brightness(.9);
+	box-shadow: -.1px 0 .5px var(--cyan-950);
+}
+header .searchbar button:active {
+	filter: brightness(.85);
+	box-shadow: -.1px 0 .2px var(--cyan-950);
+}
+
+header .searchbar button svg {
+	width: 20px;
+	fill: var(--cyan-950);
 }
 header .notifs-profile {
 	display: flex;
@@ -80,7 +157,6 @@ header .greetings {
 	display: flex;
 	align-items: center;
 	gap: 1rem;
-	margin-left: 10px;
 }
 header .greetings .username-handle {
 	font-size: 1.4em;
@@ -97,7 +173,7 @@ header .action-buttons button {
 	padding: .5rem 1rem;
 }
 main {
-	padding: 2rem 2rem 0 0;
+	padding: 1.5rem;
 	grid-area: main;
 	display: grid;
 	grid-template-areas:"projects-container anouncements-container"
