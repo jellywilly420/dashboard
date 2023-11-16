@@ -1,196 +1,548 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Admin Dashboard</title>
-	<link rel="stylesheet" href="styles.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-</head>
-<body>
-	<aside class="sidebar">
-		<div class="logo">
-			<svg width="42px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,16V4H3V16H21M21,2A2,2 0 0,1 23,4V16A2,2 0 0,1 21,18H14V20H16V22H8V20H10V18H3C1.89,18 1,17.1 1,16V4C1,2.89 1.89,2 3,2H21M5,6H14V11H5V6M15,6H19V8H15V6M19,9V14H15V9H19M5,12H9V14H5V12M10,12H14V14H10V12Z" /></svg>
-			<h1>Dashboard</h1>
-		</div>
-		<nav class="nav-links">
-			<ul class="link-list">
-				<li><a href="#"><svg alt="home" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>home</title><path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg><span>Home</span></a></li>
-				<li><a href="#"><svg alt="profile" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6,17C6,15 10,13.9 12,13.9C14,13.9 18,15 18,17V18H6M15,9A3,3 0 0,1 12,12A3,3 0 0,1 9,9A3,3 0 0,1 12,6A3,3 0 0,1 15,9M3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5C3.89,3 3,3.9 3,5Z" /></svg><span>Profile</span></a></li>
-				<li><a href="#"><svg alt="messages" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2Z" /></svg><span>Messages</span></a></li>
-				<li><a href="#"><svg alt="history" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3" /></svg><span>History</span></a></li>
-				<li><a href="#"><svg alt="tasks" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M15 7H20.5L15 1.5V7M8 0H16L22 6V18C22 19.11 21.11 20 20 20H8C6.89 20 6 19.1 6 18V2C6 .89 6.89 0 8 0M17 16V14H8V16H17M20 12V10H8V12H20Z" /></svg><span>Tasks</span></a></li>
-				<li><a href="#"><svg alt="communities" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z" /></svg><span>Communities</span></a></li>
-			</ul>
-		</nav>
-		<nav class="util-links">
-			<ul class="link-list">
-				<li><a href="#"><svg alt="settings" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z" /></svg><span>Settings</span></a></li>
-				<li><a href="#"><svg alt="support" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11,18H13V16H11V18M12,6A4,4 0 0,0 8,10H10A2,2 0 0,1 12,8A2,2 0 0,1 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10A4,4 0 0,0 12,6M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3Z" /></svg><span>Support</span></a></li>
-				<li><a href="#"><svg alt="privacy" width="32px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z" /></svg><span>Privacy</span></a></li>
-			</ul>
-		</nav>
-	</aside>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <aside class="sidebar">
+      <div class="logo">
+        <svg
+          width="42px"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M21,16V4H3V16H21M21,2A2,2 0 0,1 23,4V16A2,2 0 0,1 21,18H14V20H16V22H8V20H10V18H3C1.89,18 1,17.1 1,16V4C1,2.89 1.89,2 3,2H21M5,6H14V11H5V6M15,6H19V8H15V6M19,9V14H15V9H19M5,12H9V14H5V12M10,12H14V14H10V12Z"
+          />
+        </svg>
+        <h1>Dashboard</h1>
+      </div>
+      <nav class="nav-links">
+        <ul class="link-list">
+          <li>
+            <a href="#"
+              ><svg
+                alt="home"
+                width="32px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <title>home</title>
+                <path d="M10,20V14H14V20H19V12H22L12,3L2,12H5V20H10Z" /></svg
+              ><span>Home</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><svg
+                alt="profile"
+                width="32px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M6,17C6,15 10,13.9 12,13.9C14,13.9 18,15 18,17V18H6M15,9A3,3 0 0,1 12,12A3,3 0 0,1 9,9A3,3 0 0,1 12,6A3,3 0 0,1 15,9M3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3H5C3.89,3 3,3.9 3,5Z"
+                /></svg
+              ><span>Profile</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><svg
+                alt="messages"
+                width="32px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20,2H4A2,2 0 0,0 2,4V22L6,18H20A2,2 0 0,0 22,16V4C22,2.89 21.1,2 20,2Z"
+                /></svg
+              ><span>Messages</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><svg
+                alt="history"
+                width="32px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M13.5,8H12V13L16.28,15.54L17,14.33L13.5,12.25V8M13,3A9,9 0 0,0 4,12H1L4.96,16.03L9,12H6A7,7 0 0,1 13,5A7,7 0 0,1 20,12A7,7 0 0,1 13,19C11.07,19 9.32,18.21 8.06,16.94L6.64,18.36C8.27,20 10.5,21 13,21A9,9 0 0,0 22,12A9,9 0 0,0 13,3"
+                /></svg
+              ><span>History</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><svg
+                alt="tasks"
+                width="32px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M15 7H20.5L15 1.5V7M8 0H16L22 6V18C22 19.11 21.11 20 20 20H8C6.89 20 6 19.1 6 18V2C6 .89 6.89 0 8 0M17 16V14H8V16H17M20 12V10H8V12H20Z"
+                /></svg
+              ><span>Tasks</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><svg
+                alt="communities"
+                width="32px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12,5.5A3.5,3.5 0 0,1 15.5,9A3.5,3.5 0 0,1 12,12.5A3.5,3.5 0 0,1 8.5,9A3.5,3.5 0 0,1 12,5.5M5,8C5.56,8 6.08,8.15 6.53,8.42C6.38,9.85 6.8,11.27 7.66,12.38C7.16,13.34 6.16,14 5,14A3,3 0 0,1 2,11A3,3 0 0,1 5,8M19,8A3,3 0 0,1 22,11A3,3 0 0,1 19,14C17.84,14 16.84,13.34 16.34,12.38C17.2,11.27 17.62,9.85 17.47,8.42C17.92,8.15 18.44,8 19,8M5.5,18.25C5.5,16.18 8.41,14.5 12,14.5C15.59,14.5 18.5,16.18 18.5,18.25V20H5.5V18.25M0,20V18.5C0,17.11 1.89,15.94 4.45,15.6C3.86,16.28 3.5,17.22 3.5,18.25V20H0M24,20H20.5V18.25C20.5,17.22 20.14,16.28 19.55,15.6C22.11,15.94 24,17.11 24,18.5V20Z"
+                /></svg
+              ><span>Communities</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+      <nav class="util-links">
+        <ul class="link-list">
+          <li>
+            <a href="#"
+              ><svg
+                alt="settings"
+                width="32px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11L21.54,9.37C21.73,9.22 21.78,8.95 21.66,8.73L19.66,5.27C19.54,5.05 19.27,4.96 19.05,5.05L16.56,6.05C16.04,5.66 15.5,5.32 14.87,5.07L14.5,2.42C14.46,2.18 14.25,2 14,2H10C9.75,2 9.54,2.18 9.5,2.42L9.13,5.07C8.5,5.32 7.96,5.66 7.44,6.05L4.95,5.05C4.73,4.96 4.46,5.05 4.34,5.27L2.34,8.73C2.21,8.95 2.27,9.22 2.46,9.37L4.57,11C4.53,11.34 4.5,11.67 4.5,12C4.5,12.33 4.53,12.65 4.57,12.97L2.46,14.63C2.27,14.78 2.21,15.05 2.34,15.27L4.34,18.73C4.46,18.95 4.73,19.03 4.95,18.95L7.44,17.94C7.96,18.34 8.5,18.68 9.13,18.93L9.5,21.58C9.54,21.82 9.75,22 10,22H14C14.25,22 14.46,21.82 14.5,21.58L14.87,18.93C15.5,18.67 16.04,18.34 16.56,17.94L19.05,18.95C19.27,19.03 19.54,18.95 19.66,18.73L21.66,15.27C21.78,15.05 21.73,14.78 21.54,14.63L19.43,12.97Z"
+                /></svg
+              ><span>Settings</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><svg
+                alt="support"
+                width="32px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11,18H13V16H11V18M12,6A4,4 0 0,0 8,10H10A2,2 0 0,1 12,8A2,2 0 0,1 14,10C14,12 11,11.75 11,15H13C13,12.75 16,12.5 16,10A4,4 0 0,0 12,6M5,3H19A2,2 0 0,1 21,5V19A2,2 0 0,1 19,21H5A2,2 0 0,1 3,19V5A2,2 0 0,1 5,3Z"
+                /></svg
+              ><span>Support</span></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><svg
+                alt="privacy"
+                width="32px"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10,17L6,13L7.41,11.59L10,14.17L16.59,7.58L18,9M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1Z"
+                /></svg
+              ><span>Privacy</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </aside>
 
-	<header>
-		<div class="searchbar">
-			<input type="search">
-			<button><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg></button>
-		</div>
-		<div class="notifs-profile">
-			<a href="#" class="notifications">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21" /></svg>
-			</a>
-			<a href="#" class="profile">
-				<img src="assets/profile-picture.jpg" alt="profile picture" width="50px" height="50px" class="profile-picture">
-				<span class="username">jelly</span>
-			</a>
-		</div>
-		<div class="greetings">
-			<img src="assets/profile-picture.jpg" alt="profile picture" width="64px" height="64px" class="profile-picture">
-			<div class="text">
-				<p>Hi there, I'm</p>
-				<p class="username-handle">jelly (@jellywilly420)</p>
-			</div>
-		</div>
-		<div class="action-buttons">
-			<button>New</button>
-			<button>Upload</button>
-			<button>Share</button>
-		</div>
-	</header>
-	<main>
-		<div class="projects-container">
-			<h2>Projects</h2>
-			<div class="projects">
-				<div class="card">
-					<h3>Odin Recipes</h3>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum, nemo.</p>
-						<img src="assets/odin-recipes.png" alt="recipe page thumbnail" width="200px" height="150px">
-					</div>
-					<div class="links">
-						<a href="#"><img src="assets/live-review.svg" alt="live review" width="16px" height="16px">Live review</a>
-						<a href="#"><img src="assets/source-code.svg" alt="source code" width="16px" height="16px">Github repo</a>
-					</div>
-				</div>
-				<div class="card">
-					<h3>Landing Page</h3>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum, nemo.</p>
-						<img src="assets/landing-page.png" alt="landing page thumbnail" width="200px" height="150px">
-					</div>
-					<div class="links">
-						<a href="#"><img src="assets/live-review.svg" alt="live review" width="16px" height="16px">Live review</a>
-						<a href="#"><img src="assets/source-code.svg" alt="source code" width="16px" height="16px">Github repo</a>
-					</div>
-				</div>
-				<div class="card">
-					<h3>Rock Paper Scissors</h3>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum, nemo.</p>
-						<img src="assets/rock-paper-scissors.png" alt="rock paper scissors thumbnail" width="200px" height="150px">
-					</div>
-					<div class="links">
-						<a href="#"><img src="assets/live-review.svg" alt="live review" width="16px" height="16px">Live review</a>
-						<a href="#"><img src="assets/source-code.svg" alt="source code" width="16px" height="16px">Github repo</a>
-					</div>
-				</div>
-				<div class="card">
-					<h3>Etch-a-Sktech</h3>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum, nemo.</p>
-						<img src="assets/etch-a-sketch.png" alt="etch-a-sketch thumbnail" width="200px" height="150px">
-					</div>
-					<div class="links">
-						<a href="#"><img src="assets/live-review.svg" alt="live review" width="16px" height="16px">Live review</a>
-						<a href="#"><img src="assets/source-code.svg" alt="source code" width="16px" height="16px">Github repo</a>
-					</div>
-				</div>
-				<div class="card">
-					<h3>Calculator</h3>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum, nemo.</p>
-						<img src="assets/calculator.png" alt="calculator thumbnail" width="200px" height="150px">
-					</div>
-					<div class="links">
-						<a href="#"><img src="assets/live-review.svg" alt="live review" width="16px" height="16px">Live review</a>
-						<a href="#"><img src="assets/source-code.svg" alt="source code" width="16px" height="16px">Github repo</a>
-					</div>
-				</div>
-				<div class="card">
-					<h3>Signup Form</h3>
-					<div class="content">
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum, nemo.</p>
-						<img src="assets/sign-up.png" alt="sign up form thumbnail" width="200px" height="150px">
-					</div>
-					<div class="links">
-						<a href="#"><img src="assets/live-review.svg" alt="live review" width="16px" height="16px">Live review</a>
-						<a href="#"><img src="assets/source-code.svg" alt="source code" width="16px" height="16px">Github repo</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="anouncements-container">
-			<div class="anouncements">
-				<h2>Anouncements</h2>
-				<div class="card">
-					<h3>Lorem ipsum dolor sit, amet.</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error culpa magni, modi placeat praesentium quis cupiditate quisquam eligendi pariatur.</p>
-				</div>
-				<div class="card">
-					<h3>Lorem ipsum dolor sit, amet.</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error culpa magni, modi placeat praesentium quis cupiditate quisquam eligendi pariatur.</p>
-				</div>
-				<div class="card">
-					<h3>Lorem ipsum dolor sit, amet.</h3>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Error culpa magni, modi placeat praesentium quis cupiditate quisquam eligendi pariatur.</p>
-				</div>
-			</div>
-		</div>
-		<div class="trending-container">
-			<h2>Trending</h2>
-			<div class="trending">
-				<div class="card">
-					<img src="assets/placeholder.jpg" alt="placeholder" width="32px" height="32px">
-					<div class="content">
-						<p>@user-1</p>
-						<p>Lorem ipsum dolor sit.</p>
-					</div>
-				</div>
-				<div class="card">
-					<img src="assets/placeholder.jpg" alt="placeholder" width="32px" height="32px">
-					<div class="content">
-						<p>@user-2</p>
-						<p>Lorem ipsum dolor sit.</p>
-					</div>
-				</div>
-				<div class="card">
-					<img src="assets/placeholder.jpg" alt="placeholder" width="32px" height="32px">
-					<div class="content">
-						<p>@user-3</p>
-						<p>Lorem ipsum dolor sit.</p>
-					</div>
-				</div>
-				<div class="card">
-					<img src="assets/placeholder.jpg" alt="placeholder" width="32px" height="32px">
-					<div class="content">
-						<p>@user-4</p>
-						<p>Lorem ipsum dolor sit.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</main>
-	<footer>
-		<div class="freepik">
-			<a href="https://www.freepik.com/free-vector/cute-duck-worker-wearing-tie-glasses-cartoon-vector-icon-illustration-animal-education-isolated_77978456.htm#query=duck&position=9&from_view=search&track=sph" target="_blank">Image by catalyststuff</a> on Freepik
-		</div>
-		<div class="jelly">
-			© 2023 jellywilly420
-		</div>
-	</footer>
-</body>
+    <header>
+      <div class="searchbar">
+        <input type="search" />
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="notifs-profile">
+        <a href="#" class="notifications">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path
+              d="M21,19V20H3V19L5,17V11C5,7.9 7.03,5.17 10,4.29C10,4.19 10,4.1 10,4A2,2 0 0,1 12,2A2,2 0 0,1 14,4C14,4.1 14,4.19 14,4.29C16.97,5.17 19,7.9 19,11V17L21,19M14,21A2,2 0 0,1 12,23A2,2 0 0,1 10,21"
+            />
+          </svg>
+        </a>
+        <a href="#" class="profile">
+          <img
+            src="assets/profile-picture.jpg"
+            alt="profile picture"
+            width="50px"
+            height="50px"
+            class="profile-picture"
+          />
+          <span class="username">jelly</span>
+        </a>
+      </div>
+      <div class="greetings">
+        <img
+          src="assets/profile-picture.jpg"
+          alt="profile picture"
+          width="64px"
+          height="64px"
+          class="profile-picture"
+        />
+        <div class="text">
+          <p>Hi there, I'm</p>
+          <p class="username-handle">jelly (@jellywilly420)</p>
+        </div>
+      </div>
+      <div class="action-buttons">
+        <button>New</button>
+        <button>Upload</button>
+        <button>Share</button>
+      </div>
+    </header>
+    <main>
+      <div class="projects-container">
+        <h2>Projects</h2>
+        <div class="projects">
+          <div class="card">
+            <h3>Odin Recipes</h3>
+            <img
+              src="assets/odin-recipes.png"
+              alt="recipe page thumbnail"
+              width="180px"
+              height="130px"
+            />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum,
+              nemo.
+            </p>
+            <div class="links">
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"
+                  /></svg
+                >Live review</a
+              >
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M12.75,13.5C15.5,13.5 16.24,11.47 16.43,10.4C17.34,10.11 18,9.26 18,8.25C18,7 17,6 15.75,6C14.5,6 13.5,7 13.5,8.25C13.5,9.19 14.07,10 14.89,10.33C14.67,11 14,12 12,12C10.62,12 9.66,12.35 9,12.84V8.87C9.87,8.56 10.5,7.73 10.5,6.75C10.5,5.5 9.5,4.5 8.25,4.5C7,4.5 6,5.5 6,6.75C6,7.73 6.63,8.56 7.5,8.87V15.13C6.63,15.44 6,16.27 6,17.25C6,18.5 7,19.5 8.25,19.5C9.5,19.5 10.5,18.5 10.5,17.25C10.5,16.32 9.94,15.5 9.13,15.18C9.41,14.5 10.23,13.5 12.75,13.5M8.25,16.5A0.75,0.75 0 0,1 9,17.25A0.75,0.75 0 0,1 8.25,18A0.75,0.75 0 0,1 7.5,17.25A0.75,0.75 0 0,1 8.25,16.5M8.25,6A0.75,0.75 0 0,1 9,6.75A0.75,0.75 0 0,1 8.25,7.5A0.75,0.75 0 0,1 7.5,6.75A0.75,0.75 0 0,1 8.25,6M15.75,7.5A0.75,0.75 0 0,1 16.5,8.25A0.75,0.75 0 0,1 15.75,9A0.75,0.75 0 0,1 15,8.25A0.75,0.75 0 0,1 15.75,7.5Z"
+                  /></svg
+                >Github repo</a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <h3>Landing Page</h3>
+            <img
+              src="assets/landing-page.png"
+              alt="recipe page thumbnail"
+              width="180px"
+              height="130px"
+            />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum,
+              nemo.
+            </p>
+            <div class="links">
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"
+                  /></svg
+                >Live review</a
+              >
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M12.75,13.5C15.5,13.5 16.24,11.47 16.43,10.4C17.34,10.11 18,9.26 18,8.25C18,7 17,6 15.75,6C14.5,6 13.5,7 13.5,8.25C13.5,9.19 14.07,10 14.89,10.33C14.67,11 14,12 12,12C10.62,12 9.66,12.35 9,12.84V8.87C9.87,8.56 10.5,7.73 10.5,6.75C10.5,5.5 9.5,4.5 8.25,4.5C7,4.5 6,5.5 6,6.75C6,7.73 6.63,8.56 7.5,8.87V15.13C6.63,15.44 6,16.27 6,17.25C6,18.5 7,19.5 8.25,19.5C9.5,19.5 10.5,18.5 10.5,17.25C10.5,16.32 9.94,15.5 9.13,15.18C9.41,14.5 10.23,13.5 12.75,13.5M8.25,16.5A0.75,0.75 0 0,1 9,17.25A0.75,0.75 0 0,1 8.25,18A0.75,0.75 0 0,1 7.5,17.25A0.75,0.75 0 0,1 8.25,16.5M8.25,6A0.75,0.75 0 0,1 9,6.75A0.75,0.75 0 0,1 8.25,7.5A0.75,0.75 0 0,1 7.5,6.75A0.75,0.75 0 0,1 8.25,6M15.75,7.5A0.75,0.75 0 0,1 16.5,8.25A0.75,0.75 0 0,1 15.75,9A0.75,0.75 0 0,1 15,8.25A0.75,0.75 0 0,1 15.75,7.5Z"
+                  /></svg
+                >Github repo</a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <h3>Rock Paper Scissors</h3>
+            <img
+              src="assets/rock-paper-scissors.png"
+              alt="recipe page thumbnail"
+              width="180px"
+              height="130px"
+            />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum,
+              nemo.
+            </p>
+            <div class="links">
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"
+                  /></svg
+                >Live review</a
+              >
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M12.75,13.5C15.5,13.5 16.24,11.47 16.43,10.4C17.34,10.11 18,9.26 18,8.25C18,7 17,6 15.75,6C14.5,6 13.5,7 13.5,8.25C13.5,9.19 14.07,10 14.89,10.33C14.67,11 14,12 12,12C10.62,12 9.66,12.35 9,12.84V8.87C9.87,8.56 10.5,7.73 10.5,6.75C10.5,5.5 9.5,4.5 8.25,4.5C7,4.5 6,5.5 6,6.75C6,7.73 6.63,8.56 7.5,8.87V15.13C6.63,15.44 6,16.27 6,17.25C6,18.5 7,19.5 8.25,19.5C9.5,19.5 10.5,18.5 10.5,17.25C10.5,16.32 9.94,15.5 9.13,15.18C9.41,14.5 10.23,13.5 12.75,13.5M8.25,16.5A0.75,0.75 0 0,1 9,17.25A0.75,0.75 0 0,1 8.25,18A0.75,0.75 0 0,1 7.5,17.25A0.75,0.75 0 0,1 8.25,16.5M8.25,6A0.75,0.75 0 0,1 9,6.75A0.75,0.75 0 0,1 8.25,7.5A0.75,0.75 0 0,1 7.5,6.75A0.75,0.75 0 0,1 8.25,6M15.75,7.5A0.75,0.75 0 0,1 16.5,8.25A0.75,0.75 0 0,1 15.75,9A0.75,0.75 0 0,1 15,8.25A0.75,0.75 0 0,1 15.75,7.5Z"
+                  /></svg
+                >Github repo</a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <h3>etch-a-Sketch</h3>
+            <img
+              src="assets/etch-a-sketch.png"
+              alt="recipe page thumbnail"
+              width="180px"
+              height="130px"
+            />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum,
+              nemo.
+            </p>
+            <div class="links">
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"
+                  /></svg
+                >Live review</a
+              >
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M12.75,13.5C15.5,13.5 16.24,11.47 16.43,10.4C17.34,10.11 18,9.26 18,8.25C18,7 17,6 15.75,6C14.5,6 13.5,7 13.5,8.25C13.5,9.19 14.07,10 14.89,10.33C14.67,11 14,12 12,12C10.62,12 9.66,12.35 9,12.84V8.87C9.87,8.56 10.5,7.73 10.5,6.75C10.5,5.5 9.5,4.5 8.25,4.5C7,4.5 6,5.5 6,6.75C6,7.73 6.63,8.56 7.5,8.87V15.13C6.63,15.44 6,16.27 6,17.25C6,18.5 7,19.5 8.25,19.5C9.5,19.5 10.5,18.5 10.5,17.25C10.5,16.32 9.94,15.5 9.13,15.18C9.41,14.5 10.23,13.5 12.75,13.5M8.25,16.5A0.75,0.75 0 0,1 9,17.25A0.75,0.75 0 0,1 8.25,18A0.75,0.75 0 0,1 7.5,17.25A0.75,0.75 0 0,1 8.25,16.5M8.25,6A0.75,0.75 0 0,1 9,6.75A0.75,0.75 0 0,1 8.25,7.5A0.75,0.75 0 0,1 7.5,6.75A0.75,0.75 0 0,1 8.25,6M15.75,7.5A0.75,0.75 0 0,1 16.5,8.25A0.75,0.75 0 0,1 15.75,9A0.75,0.75 0 0,1 15,8.25A0.75,0.75 0 0,1 15.75,7.5Z"
+                  /></svg
+                >Github repo</a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <h3>Calculator</h3>
+            <img
+              src="assets/calculator.png"
+              alt="recipe page thumbnail"
+              width="180px"
+              height="130px"
+            />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum,
+              nemo.
+            </p>
+            <div class="links">
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"
+                  /></svg
+                >Live review</a
+              >
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M12.75,13.5C15.5,13.5 16.24,11.47 16.43,10.4C17.34,10.11 18,9.26 18,8.25C18,7 17,6 15.75,6C14.5,6 13.5,7 13.5,8.25C13.5,9.19 14.07,10 14.89,10.33C14.67,11 14,12 12,12C10.62,12 9.66,12.35 9,12.84V8.87C9.87,8.56 10.5,7.73 10.5,6.75C10.5,5.5 9.5,4.5 8.25,4.5C7,4.5 6,5.5 6,6.75C6,7.73 6.63,8.56 7.5,8.87V15.13C6.63,15.44 6,16.27 6,17.25C6,18.5 7,19.5 8.25,19.5C9.5,19.5 10.5,18.5 10.5,17.25C10.5,16.32 9.94,15.5 9.13,15.18C9.41,14.5 10.23,13.5 12.75,13.5M8.25,16.5A0.75,0.75 0 0,1 9,17.25A0.75,0.75 0 0,1 8.25,18A0.75,0.75 0 0,1 7.5,17.25A0.75,0.75 0 0,1 8.25,16.5M8.25,6A0.75,0.75 0 0,1 9,6.75A0.75,0.75 0 0,1 8.25,7.5A0.75,0.75 0 0,1 7.5,6.75A0.75,0.75 0 0,1 8.25,6M15.75,7.5A0.75,0.75 0 0,1 16.5,8.25A0.75,0.75 0 0,1 15.75,9A0.75,0.75 0 0,1 15,8.25A0.75,0.75 0 0,1 15.75,7.5Z"
+                  /></svg
+                >Github repo</a
+              >
+            </div>
+          </div>
+          <div class="card">
+            <h3>Sign-up Form</h3>
+            <img
+              src="assets/sign-up.png"
+              alt="recipe page thumbnail"
+              width="180px"
+              height="130px"
+            />
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing, elit. Laborum,
+              nemo.
+            </p>
+            <div class="links">
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9M12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17M12,4.5C7,4.5 2.73,7.61 1,12C2.73,16.39 7,19.5 12,19.5C17,19.5 21.27,16.39 23,12C21.27,7.61 17,4.5 12,4.5Z"
+                  /></svg
+                >Live review</a
+              >
+              <a href="#"
+                ><svg
+                  width="16px"
+                  height="16px"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M6,2H18A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2M12.75,13.5C15.5,13.5 16.24,11.47 16.43,10.4C17.34,10.11 18,9.26 18,8.25C18,7 17,6 15.75,6C14.5,6 13.5,7 13.5,8.25C13.5,9.19 14.07,10 14.89,10.33C14.67,11 14,12 12,12C10.62,12 9.66,12.35 9,12.84V8.87C9.87,8.56 10.5,7.73 10.5,6.75C10.5,5.5 9.5,4.5 8.25,4.5C7,4.5 6,5.5 6,6.75C6,7.73 6.63,8.56 7.5,8.87V15.13C6.63,15.44 6,16.27 6,17.25C6,18.5 7,19.5 8.25,19.5C9.5,19.5 10.5,18.5 10.5,17.25C10.5,16.32 9.94,15.5 9.13,15.18C9.41,14.5 10.23,13.5 12.75,13.5M8.25,16.5A0.75,0.75 0 0,1 9,17.25A0.75,0.75 0 0,1 8.25,18A0.75,0.75 0 0,1 7.5,17.25A0.75,0.75 0 0,1 8.25,16.5M8.25,6A0.75,0.75 0 0,1 9,6.75A0.75,0.75 0 0,1 8.25,7.5A0.75,0.75 0 0,1 7.5,6.75A0.75,0.75 0 0,1 8.25,6M15.75,7.5A0.75,0.75 0 0,1 16.5,8.25A0.75,0.75 0 0,1 15.75,9A0.75,0.75 0 0,1 15,8.25A0.75,0.75 0 0,1 15.75,7.5Z"
+                  /></svg
+                >Github repo</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="anouncements-container">
+        <h2>Anouncements</h2>
+        <div class="anouncements">
+          <div class="card">
+            <h3>Lorem ipsum dolor sit, amet.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+              culpa magni, modi placeat praesentium quis cupiditate quisquam
+              eligendi pariatur.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Lorem ipsum dolor sit, amet.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+              culpa magni, modi placeat praesentium quis cupiditate quisquam
+              eligendi pariatur.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Lorem ipsum dolor sit, amet.</h3>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+              culpa magni, modi placeat praesentium quis cupiditate quisquam
+              eligendi pariatur.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="trending-container">
+        <h2>Trending</h2>
+        <div class="trending">
+          <div class="card">
+            <img
+              src="assets/placeholder.jpg"
+              alt="placeholder"
+              width="32px"
+              height="32px"
+            />
+            <div class="content">
+              <p>@user-1</p>
+              <p>Lorem ipsum dolor sit.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="assets/placeholder.jpg"
+              alt="placeholder"
+              width="32px"
+              height="32px"
+            />
+            <div class="content">
+              <p>@user-2</p>
+              <p>Lorem ipsum dolor sit.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="assets/placeholder.jpg"
+              alt="placeholder"
+              width="32px"
+              height="32px"
+            />
+            <div class="content">
+              <p>@user-3</p>
+              <p>Lorem ipsum dolor sit.</p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="assets/placeholder.jpg"
+              alt="placeholder"
+              width="32px"
+              height="32px"
+            />
+            <div class="content">
+              <p>@user-4</p>
+              <p>Lorem ipsum dolor sit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="freepik">
+        <a
+          href="https://www.freepik.com/free-vector/cute-duck-worker-wearing-tie-glasses-cartoon-vector-icon-illustration-animal-education-isolated_77978456.htm#query=duck&position=9&from_view=search&track=sph"
+          target="_blank"
+          >Image by catalyststuff</a
+        >
+        on Freepik
+      </div>
+      <div class="jelly">© 2023 jellywilly420</div>
+    </footer>
+  </body>
 </html>
