@@ -404,7 +404,7 @@ footer a {
     display: none;
   }
   .sidebar nav ul li a {
-    padding: .5rem 0.25rem;
+    padding: .5rem 0.5rem;
     display: flex;
     justify-content: center;
   }
