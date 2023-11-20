@@ -104,6 +104,7 @@ header .profile-picture {
   border-radius: 100%;
 }
 header .searchbar {
+  grid-area: searchbar;
   display: flex;
   margin: 5px;
   border-radius: 999px;
@@ -146,6 +147,7 @@ header .searchbar button svg {
   fill: var(--cyan-950);
 }
 header .notifs-profile {
+  grid-area: notifs-profile;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -192,6 +194,7 @@ header .greetings {
   display: flex;
   align-items: center;
   gap: 1rem;
+  grid-area: greetings;
 }
 header .greetings .username-handle {
   font-size: 1.4em;
@@ -203,6 +206,7 @@ header .action-buttons {
   justify-content: flex-end;
   gap: 1.5rem;
   margin-right: 2rem;
+  grid-area: action-buttons;
 }
 header .action-buttons button {
   border-radius: 15px;
@@ -229,7 +233,7 @@ main {
   grid-template-areas:
     "projects-container anouncements-container"
     "projects-container trending-container";
-  grid-template-columns: 1fr 250px;
+  grid-template-columns: 1fr 250px;;
   gap: 1rem;
 }
 main .projects-container {
@@ -301,7 +305,7 @@ main .projects .card .links > *:hover svg {
 }
 main .anouncements-container {
   grid-area: anouncements-container;
-  justify-self: start;
+  height: fit-content;
 }
 main .anouncements,
 main .trending {
@@ -317,7 +321,7 @@ main .trending {
 main .anouncements .card {
   display: flex;
   flex-direction: column;
-  gap: .75rem;
+  gap: 0.75rem;
 }
 main .anouncements > *:not(:last-child) {
   padding-bottom: 1rem;
@@ -328,7 +332,7 @@ main .anouncements .card h3 {
 }
 main .trending-container {
   grid-area: trending-container;
-  justify-self: start;
+  height: fit-content;  
 }
 main .trending {
   display: flex;
@@ -345,7 +349,7 @@ main .trending .card img {
 main .trending .card .content {
   display: flex;
   flex-direction: column;
-   gap: 0.25rem;
+  gap: 0.25rem;
 }
 main .trending .card .content p:first-child {
   font-weight: 700;
@@ -366,4 +370,65 @@ footer {
 }
 footer a {
   color: var(--cyan-500);
+}
+
+@media only screen and (max-width: 850px) {
+  header {
+    grid-template-areas: "notifs-profile" "searchbar" "greetings" "action-buttons";
+    grid-template-rows: none;
+    grid-template-columns: auto;
+    padding: .75rem 1rem;
+  }
+  header .notifs-profile {
+    margin-right: .5rem;
+  }
+  header .searchbar {
+    margin-inline: .5rem;
+  }
+  header .action-buttons {
+    justify-content: center;
+    margin: 0;
+  }
+  .sidebar .logo {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0 0;
+  }
+  .sidebar .logo h1 {
+    display: none;
+  }
+  .sidebar .logo svg {
+    width: 30px;
+  }
+  .sidebar span {
+    display: none;
+  }
+  .sidebar nav ul li a {
+    padding: .5rem 0.25rem;
+    display: flex;
+    justify-content: center;
+  }
+  main {
+    justify-items: center;
+    grid-template-areas: "projects-container projects-container" "anouncements-container anouncements-container" "trending-container trending-container";
+  }
+  main .projects {
+    justify-content: center;
+    grid-auto-rows: minmax(250px, 1fr);
+  }
+  main .projects .card {
+    grid-template-areas: "title" "image" "paragraph" "links";
+    justify-items: center;
+    text-align: center;
+    padding-block: 1rem;
+  }
+  main .projects .card h3 {
+    margin-block: 0 .5rem;
+  }
+  main .projects .card p {
+    margin-block: .5rem 1rem;
+  }
+  main .trending-container { 
+    width: 100%;
+  }
 }
